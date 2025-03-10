@@ -1,22 +1,20 @@
 package simple
 
-type foo struct {
+type Foo struct {
 }
 
-func NewFoo() *foo {
-	return &foo{}
+func NewFoo() *Foo {
+	return &Foo{}
 }
 
-type bar struct {
+type Bar struct {
 }
 
-func NewBar() *bar {
-	return &bar{}
+func NewBar() *Bar {
+	return &Bar{}
 }
 
 type FooBar struct {
-	foo *foo
-	bar *bar
+	*Foo
+	*Bar
 }
-
-

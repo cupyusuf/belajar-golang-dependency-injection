@@ -44,14 +44,29 @@ func InitializeHelloService() *HelloService {
 }
 
 func InitializeFooBar() *FooBar {
-	simpleFoo := NewFoo()
-	simpleBar := NewBar()
+	foo := NewFoo()
+	bar := NewBar()
 	fooBar := &FooBar{
-		foo: simpleFoo,
-		bar: simpleBar,
+		Foo: foo,
+		Bar: bar,
 	}
 	return fooBar
 }
+
+func InitializedFooBarUsingValue() *FooBar {
+	foo := _wireFooValue
+	bar := _wireBarValue
+	fooBar := &FooBar{
+		Foo: foo,
+		Bar: bar,
+	}
+	return fooBar
+}
+
+var (
+	_wireFooValue = fooValue
+	_wireBarValue = barValue
+)
 
 // injector.go:
 
@@ -62,3 +77,7 @@ var barSet = wire.NewSet(NewBarRepository, NewBarService)
 var helloSet = wire.NewSet(
 	NewSayHelloImpl, wire.Bind(new(SayHello), new(*SayHelloImpl)),
 )
+
+var fooValue = &Foo{}
+
+var barValue = &Bar{}
