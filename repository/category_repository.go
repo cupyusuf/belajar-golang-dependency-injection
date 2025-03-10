@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"belajar-golang-restful-api/model/domain"
+	"belajar-golang-dependency-injection/model/domain"
 	"context"
 	"database/sql"
 )

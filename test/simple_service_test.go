@@ -1,7 +1,7 @@
 package test
 
 import (
-	"belajar-golang-restful-api/simple"
+	"belajar-golang-dependency-injection/simple"
 	"testing"
 
 	"github.com/stretchr/testify/assert"

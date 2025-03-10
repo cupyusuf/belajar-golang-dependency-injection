@@ -1,11 +1,11 @@
 package service
 
 import (
-	"belajar-golang-restful-api/exception"
-	"belajar-golang-restful-api/helper"
-	"belajar-golang-restful-api/model/domain"
-	"belajar-golang-restful-api/model/web"
-	"belajar-golang-restful-api/repository"
+	"belajar-golang-dependency-injection/exception"
+	"belajar-golang-dependency-injection/helper"
+	"belajar-golang-dependency-injection/model/domain"
+	"belajar-golang-dependency-injection/model/web"
+	"belajar-golang-dependency-injection/repository"
 	"context"
 	"database/sql"
 

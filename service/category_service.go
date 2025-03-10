@@ -1,7 +1,7 @@
 package service
 
 import (
-	"belajar-golang-restful-api/model/web"
+	"belajar-golang-dependency-injection/model/web"
 	"context"
 )
 

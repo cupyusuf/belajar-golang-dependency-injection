@@ -1,7 +1,7 @@
 package app
 
 import (
-	"belajar-golang-restful-api/helper"
+	"belajar-golang-dependency-injection/helper"
 	"database/sql"
 	"time"
 )

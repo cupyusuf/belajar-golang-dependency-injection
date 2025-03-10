@@ -1,8 +1,8 @@
 package app
 
 import (
-	"belajar-golang-restful-api/controller"
-	"belajar-golang-restful-api/exception"
+	"belajar-golang-dependency-injection/controller"
+	"belajar-golang-dependency-injection/exception"
 
 	"github.com/julienschmidt/httprouter"
 )
