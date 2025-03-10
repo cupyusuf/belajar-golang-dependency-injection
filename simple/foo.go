@@ -12,7 +12,5 @@ type FooService struct {
 }
 
 func NewFooService(fooRepository *FooRepository) *FooService {
-	return &FooService{
-		FooRepository: fooRepository,
-	}
+	return &FooService{FooRepository: fooRepository}
 }

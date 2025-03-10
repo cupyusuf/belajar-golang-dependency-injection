@@ -12,7 +12,5 @@ type BarService struct {
 }
 
 func NewBarService(barRepository *BarRepository) *BarService {
-	return &BarService{
-		BarRepository: barRepository,
-	}
+	return &BarService{BarRepository: barRepository}
 }

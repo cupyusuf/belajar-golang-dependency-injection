@@ -5,7 +5,7 @@ type SayHello interface {
 }
 
 type HelloService struct {
-	SayHello SayHello
+	SayHello
 }
 
 type SayHelloImpl struct {
@@ -20,7 +20,5 @@ func NewSayHelloImpl() *SayHelloImpl {
 }
 
 func NewHelloService(sayHello SayHello) *HelloService {
-	return &HelloService{
-		SayHello: sayHello,
-	}
+	return &HelloService{SayHello: sayHello}
 }

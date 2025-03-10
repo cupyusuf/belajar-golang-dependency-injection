@@ -4,51 +4,53 @@
 package simple
 
 import (
+	"github.com/google/wire"
 	"io"
 	"os"
-
-	"github.com/google/wire"
 )
 
-func InitializeService(isError bool) (*SimpleService, error) {
-	wire.Build(NewSimpleRepository, NewSimpleService)
+func InitializedService(isError bool) (*SimpleService, error) {
+	wire.Build(
+		NewSimpleRepository, NewSimpleService,
+	)
 	return nil, nil
 }
 
-func InitializeDatabaseRepository() *DatabaseRepository {
+func InitializedDatabaseRepository() *DatabaseRepository {
 	wire.Build(
-		NewDatabasePostgreSQL,
 		NewDatabaseMongoDB,
+		NewDatabasePostgreSQL,
 		NewDatabaseRepository,
 	)
 	return nil
 }
 
 var fooSet = wire.NewSet(NewFooRepository, NewFooService)
+
 var barSet = wire.NewSet(NewBarRepository, NewBarService)
 
-func InitializeFooBarService() *FooBarService {
+func InitializedFooBarService() *FooBarService {
 	wire.Build(fooSet, barSet, NewFooBarService)
 	return nil
 }
 
 // Salah
-// func InitializeHelloService() *HelloService {
-// 	wire.Build(NewHelloService, NewSayHelloImpl)
-// 	return nil
-// }
+//func InitializedHelloService() *HelloService {
+//	wire.Build(NewHelloService, NewSayHelloImpl)
+//	return nil
+//}
 
 var helloSet = wire.NewSet(
 	NewSayHelloImpl,
 	wire.Bind(new(SayHello), new(*SayHelloImpl)),
 )
 
-func InitializeHelloService() *HelloService {
+func InitializedHelloService() *HelloService {
 	wire.Build(helloSet, NewHelloService)
 	return nil
 }
 
-func InitializeFooBar() *FooBar {
+func InitializedFooBar() *FooBar {
 	wire.Build(NewFoo, NewBar, wire.Struct(new(FooBar), "*"))
 	return nil
 }
@@ -61,7 +63,7 @@ func InitializedFooBarUsingValue() *FooBar {
 	return nil
 }
 
-func InitializeReader() io.Reader {
+func InitializedReader() io.Reader {
 	wire.Build(wire.InterfaceValue(new(io.Reader), os.Stdin))
 	return nil
 }

@@ -6,8 +6,5 @@ type FooBarService struct {
 }
 
 func NewFooBarService(fooService *FooService, barService *BarService) *FooBarService {
-	return &FooBarService{
-		FooService: fooService,
-		BarService: barService,
-	}
+	return &FooBarService{FooService: fooService, BarService: barService}
 }
